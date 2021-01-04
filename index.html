@@ -14,36 +14,69 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
     <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15/dist/smooth-scroll.polyfills.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="build/lumos.css" />
     <script src="build/lumos.js"></script>
 </head>
 
-<body>
-    <section data-scroll-header class="navbar fixed w-100 flex items-center">
+<body class="w-100">
+    <section data-scroll-header class="navbar fixed w-100 flex items-center absolute">
         <div class="container">
-            <nav class="nav-section flex justify-between">
+            <nav class="nav-section flex justify-between ph3">
                 <div class="logos flex items-center">
-                    <a href="http://" target="_blank" rel="noopener noreferrer" class="mr2"><img src="img/lg-lubrax.svg"
+                    <a href="#inicio" target="_blank" rel="noopener noreferrer" class="mr2"><img src="img/lg-lubrax.svg"
                             alt="Lubrax"></a>
-                    <a href="http://" target="_blank" rel="noopener noreferrer"><img src="img/lg-podium.jpg"
+                    <a href="#inicio" target="_blank" rel="noopener noreferrer"><img src="img/lg-podium.jpg"
                             alt="Podium"></a>
                 </div>
-                <div class="menu flex items-center">
+                <div class="menu flex-ns items-center dn">
                     <a data-scroll href="#inicio">Ínicio</a>
                     <a data-scroll href="#videoseaudios">Vídeos e Áudios</a>
                     <a data-scroll href="#pilotos">Pilotos e Equipe</a>
                     <a data-scroll href="#galeria">Galeria de Fotos</a>
                 </div>
+                
+                    <div class="menu-mobile-button flex dn-ns items-center">
+                        <a href="javascript:void(0);" class="menu-icon" onclick="myFunction()">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    function myFunction() {
+                        var x = document.getElementById("menu-mobile");
+                        if (x.style.display === "flex") {
+                            x.style.display = "none";
+                        } else {
+                            x.style.display = "flex";
+                        }
+                    }
+                </script>
             </nav>
+            
+            </div>
         </div>
     </section>
+    <div class="menu-list ph3">
+        <div id="menu-mobile" class="flex flex-wrap">
+            <a data-scroll href="#inicio" class="w-100 pv3">Ínicio</a>
+            <a data-scroll href="#videoseaudios" class="w-100 pv3">Vídeos e Áudios</a>
+            <a data-scroll href="#pilotos" class="w-100 pv3">Pilotos e Equipe</a>
+            <a data-scroll href="#galeria" class="w-100 pv3">Galeria de Fotos</a>
+        </div>
+    </div>
+    <script>
+                            $('#menu-mobile a').click(function(){
+            myFunction();
+        });
+    </script>
     <section class="first">
         <header class="header flex items-end" id="inicio">
             <img src="img/barrinha-cima.svg" alt="" style="margin-bottom: -1px;">
         </header>
         <div class="bg-green-br pt5 pb5">
-            <div class="container flex items-center justify-between">
-                <div class="img-first w-50 pr5">
+            <div class="container flex flex-wrap items-center justify-between">
+                <div class="img-first w-50-ns w-100 pr5-ns pr0 ph3">
                     <div class="splide" id="first">
                         <div class="splide__track">
                             <ul class="splide__list">
@@ -65,18 +98,20 @@
                         }).mount();
                     </script>
                     <div class="flex flex-wrap pt4 justify-center">
-                        <a href="" class="tc baixar-b self-center">BAIXAR</a>
+                        <a href="downloads/webrelease-download-fotos-equipe.zip" class="tc baixar-b self-center">BAIXAR</a>
                         <span class="tc f6 white w-100 pt2">Faça o download aqui</span>
                     </div>
                 </div>
-                <div class="description-first w-50">
-                    <h1 class="white">Felipe Massa e Júlio Campos serão os pilotos da XXXXX na Stock Car 2021</h1>
-                    <p class="white">A BR Distribuidora terá uma equipe própria na temporada 2021 da Stock Car. E caberá
+                <div class="description-first w-50-ns w-100">
+                    <h1 class="white ph3">Felipe Massa e Júlio Campos serão os pilotos da XXXXX na Stock Car 2021</h1>
+                    <p class="white ph3">A BR Distribuidora terá uma equipe própria na temporada 2021 da Stock Car. E
+                        caberá
                         a Felipe Massa e Júlio Campos a missão de pilotar os carros da nova escuderia, que será
                         comandada por Rodolpho Mattheis e seu time. O ano marca a volta de Massa aos autódromos
                         brasileiros após 20 anos no exterior. A BR estampará as marcas Lubrax e Podium no novo projeto
                         que leva o nome XXXXXXXX. </p>
-                    <div class="mt4"><a href="" class="leia-mais-y">Leia Mais</a></div>
+                    <div class="mt4 ph3 flex w-100 justify-center justify-start-ns"><a href="" class="leia-mais-y">Leia
+                            Mais</a></div>
                 </div>
             </div>
         </div>
@@ -85,17 +120,17 @@
         </div>
     </section>
 
-    <section class="videos pv5">
+    <section class="videos pv5 ph2">
         <h2 class="pb5 blue-br tc" id="videoseaudios">Vídeos e Áudios</h2>
         <div class="videos-inside">
             <div class="splide" id="videos">
                 <div class="splide__track">
                     <ul class="splide__list">
-                        <li class="splide__slide"><iframe width="100%" height="500px"
+                        <li class="splide__slide"><iframe width="100%" class="h-100"
                                 src="https://www.youtube.com/embed/G1TKC38c3lY" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe></li>
-                        <li class="splide__slide"><iframe width="100%" height="500px"
+                        <li class="splide__slide"><iframe width="100%" class="h-100"
                                 src="https://www.youtube.com/embed/xp5GVtQs1fA" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe></li>
@@ -107,113 +142,143 @@
                     autoplay: false,
                     type: 'slide',
                     rewind: true,
-                    gap: '95px',
+                    height: '500px',
                     arrows: true,
                     perPage: 1,
                     focus: 'center',
                     trimSpace: false,
+                    breakpoints: {
+                        768: {
+                            arrows: false,
+                            height: '205px',
+                        },
+                    }
                 }).mount();
             </script>
         </div>
         <div class="buttons flex justify-center pt5">
-            <a href="" class="button-dw ttu fw7 mr4">Baixar Vídeos</a>
-            <a href="" class="button-dw ttu fw7">Baixar Áudios</a>
+            <a href="downloads/videos-webrelease-lubrax-podium.zip" class="button-dw ttu fw7 mr4-ns mr2">Baixar Vídeos</a>
+            <a href="downloads/audios-webrelease-lubrax-podium.zip" class="button-dw ttu fw7">Baixar Áudios</a>
         </div>
     </section>
-    <section class="pilots pv5 white tc">
+    <section class="pilots pv5-ns pv3 white tc ph3">
         <div class="container">
-            <h1 class="pb5" id="pilotos">Pilotos e Equipe</h1>
+            <h1 class="pb5-ns pb3" id="pilotos">Pilotos e Equipe</h1>
             <div class="pilotos flex flex-wrap justify-between">
-                <div class="felipe flex flex-wrap w-30">
+                <div class="felipe flex flex-wrap w-30-ns w-100 pb4">
                     <img src="img/pilot-felipe-massa.png">
-                    <p class="tl pt4">Depois de 20 anos morando e correndo fora do país, <strong>Felipe Massa</strong> está de volta ao Brasil para sua primeira temporada completa na Stock Car. Vice-campeão mundial de Fórmula 1, em 2008, pela Ferrari, ele começou sua carreira no kart com apenas oito anos de idade. </p>
-                    <div class="button-leia pt4">
+                    <p class="tl pt4">Depois de 20 anos morando e correndo fora do país, <strong>Felipe Massa</strong>
+                        está de volta ao Brasil para sua primeira temporada completa na Stock Car. Vice-campeão mundial
+                        de Fórmula 1, em 2008, pela Ferrari, ele começou sua carreira no kart com apenas oito anos de
+                        idade. </p>
+                    <div class="button-leia pt4 flex w-100 justify-center justify-start-ns">
                         <a href="pdfs/Felipe-Massa.pdf" class="leia-mais-w">Leia Mais</a>
                     </div>
                 </div>
-                <div class="julio flex flex-wrap w-30">
+                <div class="julio flex flex-wrap w-30-ns w-100 pb4">
                     <img src="img/pilot-julio-campos.png">
-                    <p class="tl pt4"><strong>Júlio Campos</strong> estrou nos monopostos em 2000 com o título da Dodge. Sua primeira prova no Stock Car foi em 2006. Três anos depois foi vice-campeão da Stock Car Light. Em 2018 e 2019 esteve na briga pelo título da Stock Car. Em 2020 completou dez anos na categoria. </p>
-                    <div class="button-leia pt4">
+                    <p class="tl pt4"><strong>Júlio Campos</strong> estrou nos monopostos em 2000 com o título da Dodge.
+                        Sua primeira prova no Stock Car foi em 2006. Três anos depois foi vice-campeão da Stock Car
+                        Light. Em 2018 e 2019 esteve na briga pelo título da Stock Car. Em 2020 completou dez anos na
+                        categoria. </p>
+                    <div class="button-leia pt4 flex w-100 justify-center justify-start-ns">
                         <a href="pdfs/Julio-Campos.pdf" class="leia-mais-w">Leia Mais</a>
                     </div>
                 </div>
-                <div class="rodolpho flex flex-wrap w-30">
+                <div class="rodolpho flex flex-wrap w-30-ns w-100 pb4">
                     <img src="img/equipe-rodolpho.png">
-                    <p class="tl pt4"><strong>Rodolpho Mattheis</strong> é o diretor-técnico da nova equipe. Pela Equipe Lubrax ele venceu o Rali Dakar, na categoria maratona, em 2009.  Depois de nove anos trabalhando ao lado do pai, Andreas Mattheis, em 2012 passou a liderar sua própria equipe de Stock Car. </p>
-                    <div class="button-leia pt4">
+                    <p class="tl pt4"><strong>Rodolpho Mattheis</strong> é o diretor-técnico da nova equipe. Pela Equipe
+                        Lubrax ele venceu o Rali Dakar, na categoria maratona, em 2009. Depois de nove anos trabalhando
+                        ao lado do pai, Andreas Mattheis, em 2012 passou a liderar sua própria equipe de Stock Car. </p>
+                    <div class="button-leia pt4 flex w-100 justify-center justify-start-ns">
                         <a href="pdfs/Rodolpho-Mattheis.pdf" class="leia-mais-w">Leia Mais</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="container galleries flex flex-wrap justify-between pb5">
+    <section class="container galleries flex flex-wrap justify-between pb5 ph3">
         <template id="lumos-template" style="z-index: 9999999;">
             <div id="lumos-container">
-              <figure id="lumos-figure">
-                <img src="" alt="" id="lumos-image">
-              </figure>
+                <figure id="lumos-figure">
+                    <img src="" alt="" id="lumos-image">
+                </figure>
             </div>
-          </template>
-          <h1 class="blue-br w-100 pv5 tc" id="galeria">Galeria de Fotos</h1>
-          <div class="gallery-wrapper flex flex-wrap">
-            <div class="gallery-item flex flex-wrap justify-between w-100">
-                <img src="img/julio-1-small.png" class="w-30" data-action="lumos" data-lumos-src="img/julio-1-big.jpeg"/>
-                <img src="img/julio-3-small.png" class="w-30" data-action="lumos" data-lumos-src="img/julio-3-big.jpeg"/>
-                <img src="img/julio-2-small.png" class="w-30" data-action="lumos" data-lumos-src="img/julio-2-big.jpeg"/>
+        </template>
+        <h1 class="blue-br w-100 pv5-ns pv3 tc" id="galeria">Galeria de Fotos</h1>
+        <div class="gallery-wrapper flex flex-wrap w-100">
+            <div class="gallery-item flex flex-wrap justify-between">
+                <img src="img/julio-1-small.png" class="w-30" data-action="lumos"
+                    data-lumos-src="img/julio-1-big.jpeg" />
+                <img src="img/julio-3-small.png" class="w-30" data-action="lumos"
+                    data-lumos-src="img/julio-3-big.jpeg" />
+                <img src="img/julio-2-small.png" class="w-30" data-action="lumos"
+                    data-lumos-src="img/julio-2-big.jpeg" />
             </div>
             <p class="fw7 white f4 tc w-100">Júlio Campos, piloto da equipe XXXX.</p>
             <div class="button-leia flex justify-center w-100">
                 <a href="downloads/julio-campos-alta-qualidade.zip" class="leia-mais-w">Download</a>
             </div>
-          </div>
-          <div class="gallery-wrapper flex flex-wrap">
-            <div class="gallery-item flex flex-wrap justify-between w-100">
-                <img src="img/felipe-1-small.png" class="w-30" data-action="lumos" data-lumos-src="img/felipe-1-big.jpeg"/>
-                <img src="img/felipe-2-small.png" class="w-30" data-action="lumos" data-lumos-src="img/felipe-2-big.jpeg"/>
-                <img src="img/felipe-3-small.png" class="w-30" data-action="lumos" data-lumos-src="img/felipe-3-big.jpeg"/>
+        </div>
+        <div class="gallery-wrapper flex flex-wrap w-100">
+            <div class="gallery-item flex flex-wrap justify-between">
+                <img src="img/felipe-1-small.png" class="w-30" data-action="lumos"
+                    data-lumos-src="img/felipe-1-big.jpeg" />
+                <img src="img/felipe-2-small.png" class="w-30" data-action="lumos"
+                    data-lumos-src="img/felipe-2-big.jpeg" />
+                <img src="img/felipe-3-small.png" class="w-30" data-action="lumos"
+                    data-lumos-src="img/felipe-3-big.jpeg" />
             </div>
             <p class="fw7 white f4 tc w-100">Felipe Massa, piloto da equipe XXXX.</p>
             <div class="button-leia flex justify-center w-100">
                 <a href="downloads/felipe-massa-alta-qualidade.zip" class="leia-mais-w">Download</a>
             </div>
-          </div>
-          <div class="gallery-wrapper flex flex-wrap">
-            <div class="gallery-item flex flex-wrap justify-between w-100">
-                <img src="img/rodolpho-1-small.png" class="w-30" data-action="lumos" data-lumos-src="img/rodolpho-1-big.jpg"/>
-                <img src="img/rodolpho-2-small.png" class="w-30" data-action="lumos" data-lumos-src="img/rodolpho-2-big.jpg"/>
-                <img src="img/rodolpho-3-small.png" class="w-30" data-action="lumos" data-lumos-src="img/rodolpho-3-big.jpeg"/>
+        </div>
+        <div class="gallery-wrapper flex flex-wrap w-100">
+            <div class="gallery-item flex flex-wrap justify-between">
+                <img src="img/rodolpho-1-small.png" class="w-30" data-action="lumos"
+                    data-lumos-src="img/rodolpho-1-big.jpg" />
+                <img src="img/rodolpho-2-small.png" class="w-30" data-action="lumos"
+                    data-lumos-src="img/rodolpho-2-big.jpg" />
+                <img src="img/rodolpho-3-small.png" class="w-30" data-action="lumos"
+                    data-lumos-src="img/rodolpho-3-big.jpeg" />
             </div>
             <p class="fw7 white f4 tc w-100">Rodolpho Mattheis, diretor executivo da equipe XXXXX.</p>
             <div class="button-leia flex justify-center w-100">
                 <a href="downloads/rodolpho-fotos-alta-qualidade.zip" class="leia-mais-w">Download</a>
             </div>
-          </div>
-          <div class="gallery-wrapper flex flex-wrap">
-            <div class="gallery-item flex flex-wrap justify-between w-100">
-                <img src="img/leonardo-1-small.png" class="w-30" data-action="lumos" data-lumos-src="img/leonardo-1-big.jpg"/>
-                <img src="img/leonardo-2-small.png" class="w-30" data-action="lumos" data-lumos-src="img/leonardo-2-big.jpg"/>
-                <img src="img/leonardo-3-small.png" class="w-30" data-action="lumos" data-lumos-src="img/leonardo-3-big.jpg"/>
+        </div>
+        <div class="gallery-wrapper flex flex-wrap w-100">
+            <div class="gallery-item flex flex-wrap justify-between">
+                <img src="img/leonardo-1-small.png" class="w-30" data-action="lumos"
+                    data-lumos-src="img/leonardo-1-big.jpg" />
+                <img src="img/leonardo-2-small.png" class="w-30" data-action="lumos"
+                    data-lumos-src="img/leonardo-2-big.jpg" />
+                <img src="img/leonardo-3-small.png" class="w-30" data-action="lumos"
+                    data-lumos-src="img/leonardo-3-big.jpg" />
             </div>
-            <p class="fw7 white f4 tc w-100" style="line-height: 1.2;">Leonardo Burgos, Diretor de Desenvolvimento de Negócios e Marketing da BR Distribuidora.</p>
+            <p class="fw7 white f4 tc w-100" style="line-height: 1.2;">Leonardo Burgos, Diretor de Desenvolvimento de
+                Negócios e Marketing da BR Distribuidora.</p>
             <div class="button-leia flex justify-center w-100">
                 <a href="downloads/leonardo-burgos-alta-qualidade.zip" class="leia-mais-w">Download</a>
             </div>
-          </div>
-        
+        </div>
+
     </section>
-    <footer class="footer pv4">
-        <div class="container flex justify-between items-center">
-        <div class="copyright green-br">
-            <p>Todos os direitos reservados à <strong>BR Distribuidora</strong></p>
+    <footer class="footer pv4 ph3">
+        <div class="container flex flex-wrap justify-between items-center">
+            <div class="copyright green-br w-50-ns w-100 tc tl-ns">
+                <p>Todos os direitos reservados à <strong>BR Distribuidora</strong></p>
+            </div>
+            <div class="redes flex flex-wrap justify-center justify-end-ns w-50-ns w-100 tc tl-ns">
+                <a href="https://www.facebook.com/postospetrobras/" target="_blank" rel="noopener noreferrer"
+                    class="scale"><img src="img/facebook.svg" alt=""></a>
+                <a href="https://www.instagram.com/postospetrobras/" target="_blank" rel="noopener noreferrer"
+                    class="scale mh3"><img src="img/instagram.svg" alt=""></a>
+                <a href="https://twitter.com/postospetrobras" target="_blank" rel="noopener noreferrer"
+                    class="scale"><img src="img/twitter.svg" alt=""></a>
+            </div>
         </div>
-        <div class="redes flex flex-wrap">
-            <a href="https://www.facebook.com/postospetrobras/" target="_blank" rel="noopener noreferrer" class="scale"><img src="img/facebook.svg" alt=""></a>
-            <a href="https://www.instagram.com/postospetrobras/" target="_blank" rel="noopener noreferrer" class="scale mh3"><img src="img/instagram.svg" alt=""></a>
-            <a href="https://twitter.com/postospetrobras" target="_blank" rel="noopener noreferrer" class="scale"><img src="img/twitter.svg" alt=""></a>
-        </div>
-    </div>
     </footer>
     <script>
         var scroll = new SmoothScroll('a[href*="#"]', {
